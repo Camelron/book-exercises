@@ -5,11 +5,15 @@
 #install.packages("nycflights13")  # should be done already
 library("nycflights13")
 library("dplyr")
+View(flights)
 
 # What was the average departure delay in each month?
 # Save this as a data frame `dep_delay_by_month`
 # Hint: you'll have to perform a grouping operation then summarizing your data
-
+dep_delay_by_month <- data.frame(1:12)
+for(i in c(1:12)) {
+  dep_delay_by_month$X1.12 <- filter(flights, month == i)
+}
 
 # Which month had the greatest average departure delay?
 
